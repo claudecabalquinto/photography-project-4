@@ -1,6 +1,7 @@
 
 export default function NewPhotoPage() {
 
+  
   return (
     <form method="POST">
     <input type="file" /> <br />
