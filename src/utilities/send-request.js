@@ -1,6 +1,6 @@
 import { getToken } from './users-service';
 
-export default async function sendRequest(url, method = 'GET', payload = null) {
+export default async function sendRequest(url, method = 'GET', payload = null, payloadIsFormData = false) {
   const options = { method };
   if (payload) {
     options.headers = { 'Content-Type': 'application/json' };
@@ -9,8 +9,8 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
   const token = getToken();
   if (token) {
     // Ensure that headers object exists
-    options.headers ||= {};
-    options.headers.Authorization = `Bearer ${token}`;
+    options.headers = payloadIsFormData ? {} : { 'Content-Type': 'application/json' };
+    options.body = payloadIsFormData ? payload : JSON.stringify(payload);
   }
   const res = await fetch(url, options);
   // res.ok will be false if the status code is not 200-299
