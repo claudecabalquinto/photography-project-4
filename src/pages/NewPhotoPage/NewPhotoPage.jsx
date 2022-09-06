@@ -1,12 +1,12 @@
+import PhotoForm from '../../components/PhotoForm/PhotoForm';
+import PhotoCard from '../../components/PhotoCard/PhotoCard'
 
-export default function NewPhotoPage() {
 
-  
+export default function NewPhotoPage({ user }) {
+
   return (
-    <form method="POST">
-    <input type="file" /> <br />
-    <input type="text" placeholder="title" /> <br />
-    <button>Submit</button>
-    </form>
+  <>
+    <PhotoForm user={user} />
+  </>
   );
 }
