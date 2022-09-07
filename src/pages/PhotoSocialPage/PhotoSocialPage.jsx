@@ -18,5 +18,7 @@ export default function PhotoSocialPage() {
       <h1>Photo Social</h1> 
       {photos.map(p => <PhotoCard photo={p} key={p._id} />)}
     </div>
+
+    
   );
 }
