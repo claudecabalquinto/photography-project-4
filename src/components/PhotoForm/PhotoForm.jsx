@@ -34,9 +34,9 @@ export default function PhotoForm() {
                 <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" />
                 <button onClick={handleUpload}>Upload Photo</button>
             </section>
-            <section>
+            {/* <section>
                 {photos.map(p => <PhotoCard photo={p} key={p._id} />)}
-            </section>
+            </section> */}
         </main>
     );
 }

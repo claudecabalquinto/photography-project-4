@@ -12,6 +12,7 @@ async function index(req, res) {
 }
 
 async function upload(req, res) {
+  console.log('file', req.file)
   try {
     if (req.file) {
       // TODO: Remove the console.log after you've verified the output
