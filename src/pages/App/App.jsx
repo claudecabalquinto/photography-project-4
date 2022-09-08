@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewPhotoPage from '../NewPhotoPage/NewPhotoPage';
 import PhotoSocialPage from '../PhotoSocialPage/PhotoSocialPage';
+import PhotoDetailPage from '../PhotoDetailPage/PhotoDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -19,6 +20,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/photos/new' element={<NewPhotoPage />} />
             <Route path='/photos' element={<PhotoSocialPage />} />
+            <Route path='/photos/:id' element={<PhotoDetailPage />} />
           </Routes>
         </>
         :

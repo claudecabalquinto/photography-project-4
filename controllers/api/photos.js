@@ -3,7 +3,8 @@ const Photo = require('../../models/photo');
 
 module.exports = {
   index,
-  upload
+  upload,
+  create
 };
 
 async function index(req, res) {
@@ -12,7 +13,6 @@ async function index(req, res) {
 }
 
 async function upload(req, res) {
-  console.log('file', req.file)
   try {
     if (req.file) {
       // TODO: Remove the console.log after you've verified the output
@@ -31,4 +31,14 @@ async function upload(req, res) {
   } catch (err) {
     res.status(400).json(err.message);
   }
+}
+
+async function create(req, res) {
+  Photo.findById(req.params.id, function(err, photo) {
+    req.body.user = req.user._id;
+    photo.reviews.push(req.body);
+    photo.save(function(err) {
+      res.redirect(`/photos/${photos._id}`);
+    });
+  });
 }
