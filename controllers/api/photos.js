@@ -4,7 +4,7 @@ const Photo = require('../../models/photo');
 module.exports = {
   index,
   upload,
-  create
+  addReview
 };
 
 async function index(req, res) {
@@ -33,12 +33,11 @@ async function upload(req, res) {
   }
 }
 
-async function create(req, res) {
-  Photo.findById(req.params.id, function(err, photo) {
-    req.body.user = req.user._id;
-    photo.reviews.push(req.body);
-    photo.save(function(err) {
-      res.redirect(`/photos/${photos._id}`);
-    });
-  });
+async function addReview(req, res) {
+  let photo = await Photo.findById(req.params.id) 
+  req.body.user = req.user._id;
+  photo.reviews.push(req.body);
+  await photo.save()
+  const photos = await Photo.find({}).sort('-createdAt').exec();
+  res.json(photos);
 }

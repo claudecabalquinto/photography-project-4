@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import './App.css';
+import { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
@@ -6,10 +7,24 @@ import NewPhotoPage from '../NewPhotoPage/NewPhotoPage';
 import PhotoSocialPage from '../PhotoSocialPage/PhotoSocialPage';
 import PhotoDetailPage from '../PhotoDetailPage/PhotoDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
-import './App.css';
+import * as photosAPI from '../../utilities/photos-api';;
 
 export default function App() {
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(getUser())
+  const [photos, setPhotos] = useState([]);
+  // Use a ref prop on the <input> in the JSX to
+  // create a reference to the <input>, i.e.,
+  // inputRef.current will be the <input> DOM element
+  const fileInputRef = useRef();
+
+  useEffect(() => {
+    async function getAllPhotos () {
+     let allPhotos = await photosAPI.getAll();
+     console.log(allPhotos, "allPhotos")
+      setPhotos(allPhotos)
+    }
+    getAllPhotos();  
+  }, []);
 
   return (
     <main className="App">
@@ -18,9 +33,9 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/photos/new' element={<NewPhotoPage />} />
-            <Route path='/photos' element={<PhotoSocialPage />} />
-            <Route path='/photos/:id' element={<PhotoDetailPage />} />
+            <Route path='/photos/new' element={<NewPhotoPage photos={photos} setPhotos={setPhotos} />} />
+            <Route path='/photos' element={<PhotoSocialPage photos={photos} />} />
+            <Route path='/photos/:photoId' element={<PhotoDetailPage user={user} setPhotos={setPhotos} />} />
           </Routes>
         </>
         :

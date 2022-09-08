@@ -1,18 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const photoSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: "User" },
-  url: {type: String, required: true},
-  title: String
-}, {
-  timestamps: true,
-});
-
 const reviewSchema = new Schema({
   content: {
     type: String,
-    match: /.{10,}/
+    match: /.{5,}/
   },
   rating: {
     type: Number,
@@ -24,6 +16,15 @@ const reviewSchema = new Schema({
   userName: String,
 }, {
   timestamps: true
+});
+
+const photoSchema = new Schema({
+  user: { type: Schema.Types.ObjectId, ref: "User" },
+  url: {type: String, required: true},
+  title: String,
+  reviews: [reviewSchema]
+}, {
+  timestamps: true,
 });
 
 module.exports = mongoose.model('Photo', photoSchema);
