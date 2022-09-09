@@ -14,7 +14,9 @@ export default function PhotoDetailPage({ setPhotos, photos }) {
             <h1>PhotoDetailPage</h1>
             <img src={photo.url} alt={photo.title} />
             <ReviewForm photoId={photoId} setPhotos={setPhotos} />
-            review:{photo.reviews.map(r => r.content)}
+            
+            Review:{photo.reviews.map(r => r.content)}<br />
+            Rating:{photo.reviews.map(r => r.rating)}
             
             
             
