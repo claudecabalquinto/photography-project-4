@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
 
-export default function ReviewCard({ photos, photo }) {
+export default function ReviewCard({ photo }) {
     const [reviews, setReviews] = useState([]);
     const { photoId } = useParams();
     
