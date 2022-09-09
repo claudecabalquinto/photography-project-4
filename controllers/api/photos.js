@@ -4,7 +4,8 @@ const Photo = require('../../models/photo');
 module.exports = {
   index,
   upload,
-  addReview
+  addReview,
+  deletePhoto
 };
 
 async function index(req, res) {
@@ -34,11 +35,14 @@ async function upload(req, res) {
 }
 
 async function addReview(req, res) {
-  console.log(req.body)
   let photo = await Photo.findById(req.params.id) 
   req.body.user = req.user._id;
   photo.reviews.push(req.body);
   await photo.save()
   const photos = await Photo.find({}).sort('-createdAt').exec();
   res.json(photos);
+}
+
+async function deletePhoto(req, res) {
+  await Photo.findByIdAndDelete(req.params.id)
 }
