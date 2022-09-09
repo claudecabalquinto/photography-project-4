@@ -34,6 +34,7 @@ async function upload(req, res) {
 }
 
 async function addReview(req, res) {
+  console.log(req.body)
   let photo = await Photo.findById(req.params.id) 
   req.body.user = req.user._id;
   photo.reviews.push(req.body);

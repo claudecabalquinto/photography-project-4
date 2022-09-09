@@ -32,6 +32,9 @@ export default function ReviewForm({ photoId, setPhotos }) {
         </select><br />
         <button type="submit">Submit</button>
         </form>
+        
+        
         </>
+
     )
 }

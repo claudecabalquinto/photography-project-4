@@ -14,5 +14,5 @@ export function upload(formData) {
 
 export function addReview(reviewData, id) {
   console.log(reviewData, id, "addReviewAPI")
-  return sendRequest(`${BASE_URL}/${id}`, 'POST', reviewData);
+  return sendRequest(`${BASE_URL}/${id}/reviews`, 'POST', reviewData);
 }

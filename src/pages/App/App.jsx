@@ -19,8 +19,7 @@ export default function App() {
 
   useEffect(() => {
     async function getAllPhotos () {
-     let allPhotos = await photosAPI.getAll();
-     console.log(allPhotos, "allPhotos")
+      let allPhotos = await photosAPI.getAll();
       setPhotos(allPhotos)
     }
     getAllPhotos();  
@@ -35,7 +34,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/photos/new' element={<NewPhotoPage photos={photos} setPhotos={setPhotos} />} />
             <Route path='/photos' element={<PhotoSocialPage photos={photos} />} />
-            <Route path='/photos/:photoId' element={<PhotoDetailPage user={user} setPhotos={setPhotos} />} />
+            <Route path='/photos/:photoId' element={<PhotoDetailPage user={user} photos={photos} setPhotos={setPhotos} />} />
           </Routes>
         </>
         :
