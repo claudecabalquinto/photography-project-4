@@ -44,5 +44,7 @@ async function addReview(req, res) {
 }
 
 async function deletePhoto(req, res) {
-  await Photo.findByIdAndDelete(req.params.id)
+  await Photo.findByIdAndDelete(req.params.id);
+  const photos = await Photo.find({}).sort('-createdAt').exec();
+  res.json(photos);
 }

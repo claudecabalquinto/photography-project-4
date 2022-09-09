@@ -1,11 +1,12 @@
 import PhotoCard from '../../components/PhotoCard/PhotoCard';
 import * as photosAPI from '../../utilities/photos-api';;
 
-export default function PhotoSocialPage({ photos }) {
+export default function PhotoSocialPage({ photos, setPhotos }) {
   
-  async function handleDelete(id){
-    await photosAPI.deletePhoto(id)
-  }
+    async function handleDelete(id) {
+      const allPhotos = await photosAPI.deletePhoto(id)
+      setPhotos(allPhotos)
+    }
 
   return (
     <div>

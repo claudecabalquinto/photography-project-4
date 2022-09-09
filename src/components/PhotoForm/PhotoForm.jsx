@@ -17,6 +17,7 @@ export default function PhotoForm({ setPhotos, photos }) {
     async function handleUpload() {
         // Use FormData object to send the inputs in the fetch request
         // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_a_file
+        if (title === '') return; 
         const formData = new FormData();
         formData.append('title', title);
         formData.append('photo', fileInputRef.current.files[0]);
