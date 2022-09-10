@@ -5,7 +5,8 @@ module.exports = {
   index,
   upload,
   addReview,
-  deletePhoto
+  deletePhoto,
+  updateReview
 };
 
 async function index(req, res) {
@@ -44,7 +45,13 @@ async function addReview(req, res) {
 }
 
 async function deletePhoto(req, res) {
-  await Photo.findByIdAndDelete(req.params.id);
+  await Photo.findByIdAndDelete();
+  const photos = await Photo.find({}).sort('-createdAt').exec();
+  res.json(photos);
+}
+
+async function updateReview(req, res) {
+  await Photo.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id}, req.body, {new:true})
   const photos = await Photo.find({}).sort('-createdAt').exec();
   res.json(photos);
 }
