@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as photosAPI from '../../utilities/photos-api';
 
-export default function UpdateReviewForm({ setPhotos, showUpdate, setShowUpdate, review }) {
+export default function UpdateReviewForm({ setPhotos, showUpdate, setShowUpdate, review, photoId }) {
     const [formData, setFormData] = useState({
         content: review.content,
         rating: review.rating,
@@ -9,7 +9,7 @@ export default function UpdateReviewForm({ setPhotos, showUpdate, setShowUpdate,
 
     async function handleSubmit(evt) {
         evt.preventDefault()
-        let photos = await photosAPI.addUpdateReview(formData, review._id)
+        let photos = await photosAPI.addUpdateReview(formData, photoId, review._id)
         setPhotos(photos)
         setShowUpdate(!showUpdate)
     }

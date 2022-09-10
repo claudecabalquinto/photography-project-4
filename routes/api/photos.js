@@ -11,7 +11,7 @@ router.post('/upload', upload.single('photo'), photosCtrl.upload);
 // The 'photo' maps to the name used when adding the input to the FormData object
 router.post('/:id/reviews', photosCtrl.addReview);
 router.delete('/:id', photosCtrl.deletePhoto);
-router.put('/:id', photosCtrl.updateReview);
+router.put('/:photoId/reviews/:reviewId', photosCtrl.updateReview);
 
 
 

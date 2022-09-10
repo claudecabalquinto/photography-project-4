@@ -51,7 +51,11 @@ async function deletePhoto(req, res) {
 }
 
 async function updateReview(req, res) {
-  await Photo.findOneAndUpdate({_id: req.params.id, userRecommending: req.user._id}, req.body, {new:true})
+  let photo = await Photo.findById(req.params.photoId)
+  const commentSubdoc = photo.reviews.id(req.params.reviewId);
+  commentSubdoc.content = req.body.content;
+  commentSubdoc.rating = req.body.rating;
+  await photo.save();
   const photos = await Photo.find({}).sort('-createdAt').exec();
   res.json(photos);
 }

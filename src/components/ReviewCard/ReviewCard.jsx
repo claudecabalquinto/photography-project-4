@@ -21,7 +21,7 @@ export default function ReviewCard({ r, photo, setPhotos }) {
         <button onClick={() => setShowUpdate(!showUpdate)}>Cancel</button>
                 
                 
-        <UpdateReviewForm showUpdate={showUpdate} setShowUpdate={setShowUpdate} setPhotos={setPhotos} review={r}/>
+        <UpdateReviewForm showUpdate={showUpdate} setShowUpdate={setShowUpdate} setPhotos={setPhotos} photoId={photo._id} review={r}/>
         </>
         }
         </>

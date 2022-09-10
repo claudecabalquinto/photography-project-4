@@ -21,6 +21,6 @@ export function deletePhoto(id) {
 }
 
 
-export function addUpdateReview(reviewData, id) {
-  return sendRequest(`${BASE_URL}/${id}`, 'PUT', reviewData);
+export function addUpdateReview(reviewData, photoId, reviewId) {
+  return sendRequest(`${BASE_URL}/${photoId}/reviews/${reviewId}`, 'PUT', reviewData);
 }
