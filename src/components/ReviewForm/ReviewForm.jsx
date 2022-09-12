@@ -21,7 +21,7 @@ export default function ReviewForm({ photoId, setPhotos }) {
     return (
         <>
         <form onSubmit={handleSubmit}>
-        <input name='content' onChange={handleChange} value={review.content} type='text' placeholder="review" /><br />
+        <input name='content' onChange={handleChange} value={review.content} type='text' placeholder="Review" /><br />
         <label>Rating</label>
         <select onChange={handleChange} value={review.rating} name='rating'>
             <option value='5'>5</option>
@@ -32,6 +32,7 @@ export default function ReviewForm({ photoId, setPhotos }) {
         </select><br />
         <button type="submit">Submit</button>
         </form>
+        <hr />
         
         
         </>

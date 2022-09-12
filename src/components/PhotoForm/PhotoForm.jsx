@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import * as photosAPI from '../../utilities/photos-api';
+import './PhotoForm.css';
 import PhotoCard from '../../components/PhotoCard/PhotoCard'
 
 export default function PhotoForm({ setPhotos, photos }) {
@@ -31,7 +32,7 @@ export default function PhotoForm({ setPhotos, photos }) {
 
     return (
         <main>
-            <section>
+            <section className='uploadform'>
                 <input type="file" ref={fileInputRef} />
                 <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" />
                 <button onClick={handleUpload}>Upload Photo</button>

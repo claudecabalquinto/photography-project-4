@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './PhotoCard.css';
 
 export default function PhotoCard({ photo }) {
 

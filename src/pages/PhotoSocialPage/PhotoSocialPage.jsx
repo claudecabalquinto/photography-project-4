@@ -11,8 +11,8 @@ export default function PhotoSocialPage({ photos, setPhotos }) {
   return (
     <div>
       <h1>Photo Social</h1> 
-      {photos.map(p => <><PhotoCard photo={p} key={p._id} /> <button onClick={(() => handleDelete(p._id))}>Delete</button></>)}
-
+      {photos.map(p => <><PhotoCard photo={p} key={p._id} /> <br /> <button className="delete" onClick={(() => handleDelete(p._id))}>Delete</button> <br /> <hr /> </> )}
+     
     </div>
 
     
