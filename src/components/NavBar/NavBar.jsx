@@ -11,6 +11,8 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className='navbar'>
+      <Link to='/'>Home</Link>
+      &nbsp; | &nbsp;
       <Link to='/photos'>Photo Social</Link>
       &nbsp; | &nbsp;
       <Link to='/photos/new'>New Photo</Link>

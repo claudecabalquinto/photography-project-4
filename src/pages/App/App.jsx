@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewPhotoPage from '../NewPhotoPage/NewPhotoPage';
 import PhotoSocialPage from '../PhotoSocialPage/PhotoSocialPage';
 import PhotoDetailPage from '../PhotoDetailPage/PhotoDetailPage';
+import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
 import * as photosAPI from '../../utilities/photos-api';;
 
@@ -35,6 +36,7 @@ export default function App() {
             <Route path='/photos/new' element={<NewPhotoPage photos={photos} setPhotos={setPhotos} />} />
             <Route path='/photos' element={<PhotoSocialPage photos={photos} setPhotos={setPhotos} user={user} />} />
             <Route path='/photos/:photoId' element={<PhotoDetailPage user={user} photos={photos} setPhotos={setPhotos} />} />
+            <Route path='/' element={<HomePage /> }/>
           </Routes>
         </>
         :
