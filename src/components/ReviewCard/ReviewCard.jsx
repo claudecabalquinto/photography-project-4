@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import * as photosAPI from '../../utilities/photos-api';
 import UpdateReviewForm from '../../components/UpdateReviewForm/UpdateReviewForm';
 
-export default function ReviewCard({ r, photo, setPhotos }) {
+export default function ReviewCard({ r, photo, setPhotos, user }) {
     const [showUpdate, setShowUpdate] = useState(true);
 
     
@@ -14,7 +14,7 @@ export default function ReviewCard({ r, photo, setPhotos }) {
                <h1> Reviews: </h1> 
                <p>review: {r.content}</p>
                <p>rating: {r.rating}</p>
-                <button onClick={() => setShowUpdate(!showUpdate)}>Edit</button>
+                {r.user === user._id && <button onClick={() => setShowUpdate(!showUpdate)}>Edit</button>}
             </div>
         : 
         <>

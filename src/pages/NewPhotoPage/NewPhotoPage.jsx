@@ -1,4 +1,5 @@
 import PhotoForm from '../../components/PhotoForm/PhotoForm';
+import './NewPhotoPage.css'
 
 export default function NewPhotoPage({ user, photos, setPhotos }) {
 

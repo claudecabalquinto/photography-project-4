@@ -24,7 +24,8 @@ async function upload(req, res) {
       const photoDoc = await Photo.create({
         url: photoURL,
         // As usual, other inputs sent with the file are available on req.body
-        title: req.body.title
+        title: req.body.title,
+        user: req.user._id
       });
       res.json(photoDoc);
     } else {

@@ -33,7 +33,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/photos/new' element={<NewPhotoPage photos={photos} setPhotos={setPhotos} />} />
-            <Route path='/photos' element={<PhotoSocialPage photos={photos} setPhotos={setPhotos} />} />
+            <Route path='/photos' element={<PhotoSocialPage photos={photos} setPhotos={setPhotos} user={user} />} />
             <Route path='/photos/:photoId' element={<PhotoDetailPage user={user} photos={photos} setPhotos={setPhotos} />} />
           </Routes>
         </>
