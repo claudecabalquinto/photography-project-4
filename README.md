@@ -37,7 +37,10 @@ Photo Social is a Photo  application that makes sharing and getting feed back on
 **TECHNOLOGY:**<br>
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
 ![AWS S3](https://img.shields.io/badge/-AWS_S3-05122A?style=flat&logo=amazons3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
+![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
+![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
 ![Node](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js)
 ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
 ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
