@@ -27,11 +27,11 @@ Photo Social is a Photo  application that makes sharing and getting feed back on
 
 **SCREENSHOTS:**<br>
 
-<!-- <img src = "https://i.imgur.com/sxIp7SN.png" />
+<img src = "https://i.imgur.com/aJSV8Zg.png" />
 <br>
-<img src = "https://i.imgur.com/zk57ZwE.png" />
+<img src = "https://i.imgur.com/UMJUjDF.png" />
 <br>
-<img src = "https://i.imgur.com/G1bMiJc.png" /> -->
+<img src = "https://i.imgur.com/RCJEc82.png" />
 
 
 **TECHNOLOGY:**<br>

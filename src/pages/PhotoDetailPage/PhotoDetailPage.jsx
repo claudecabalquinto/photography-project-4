@@ -2,7 +2,7 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import UpdateReviewForm from '../../components/UpdateReviewForm/UpdateReviewForm';
 import { useParams } from "react-router-dom";
-import { useState } from 'react';
+
 
 
 export default function PhotoDetailPage({ user, setPhotos, photos }) {
@@ -14,7 +14,7 @@ export default function PhotoDetailPage({ user, setPhotos, photos }) {
 
     return (
         <>
-            <h1>PhotoDetailPage</h1>
+            <h1>Leave a Review</h1>
             <img src={photo.url} alt={photo.title} />
             <ReviewForm photoId={photoId} setPhotos={setPhotos} />
             <br />
@@ -22,7 +22,7 @@ export default function PhotoDetailPage({ user, setPhotos, photos }) {
             
             {reviews}
             
-             
+        
             
         </>
     );
