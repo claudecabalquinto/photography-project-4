@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useParams } from "react-router-dom";
-import * as photosAPI from '../../utilities/photos-api';
 import UpdateReviewForm from '../../components/UpdateReviewForm/UpdateReviewForm';
 
 export default function ReviewCard({ r, photo, setPhotos, user }) {

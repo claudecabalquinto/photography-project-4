@@ -1,6 +1,5 @@
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
-import UpdateReviewForm from '../../components/UpdateReviewForm/UpdateReviewForm';
 import { useParams } from "react-router-dom";
 
 

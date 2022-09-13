@@ -1,7 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import * as photosAPI from '../../utilities/photos-api';
 import './PhotoForm.css';
-import PhotoCard from '../../components/PhotoCard/PhotoCard'
 
 export default function PhotoForm({ setPhotos, photos }) {
     const [title, setTitle] = useState('');
